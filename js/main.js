@@ -42,7 +42,6 @@ function fillData(data){
                 weatherImg.src = "images/weathersvg/snowy-1.svg";
                 break;
         }
-        document.getElementById("sun").style.transform = "translate(" + sW * (d.getHours()*60+d.getMinutes())/1440 + "px, 18px)";
         var sunriseTime = new Date(data.sys.sunrise*1000);
         var sunsetTime = new Date(data.sys.sunset*1000);
         document.getElementById("riseTime").style.transform = "translate(" + sW * (sunriseTime.getHours()*60+sunriseTime.getMinutes())/1440 + "px, 0)";
@@ -80,6 +79,7 @@ function fillData(data){
         var att = "th";
     }
     document.getElementById("tD").innerHTML = DOW[d.getDay()] + ", " + months[d.getMonth()] + " " + d.getDate() + att;
+    document.getElementById("sun").style.transform = "translate(" + sW * (d.getHours()*60+d.getMinutes())/1440 + "px, 18px)";
    
 };
 
