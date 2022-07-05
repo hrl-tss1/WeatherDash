@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>WeatherDash</title>
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        
+    </head>
+    <body>
+        <section class="container">
+            <section class="area" id="area1">
+                <section id="topbox1">
+                    <img src="images/minneapolis.svg" alt="Minneapolis" style="height:70%;">
+                </section>
+                <section id="box1">
+                    <section class="info" id="info1">
+                        <img src="images/weathersvg/weather_sagittarius.svg" id="arrow">
+                        <p id="n" class="cd">N</p>
+                        <p id="e" class="cd">E</p>
+                        <p id="s" class="cd">S</p>
+                        <p id="ww" class="cd">W</p>
+                        <p id="wd" class="cd"></p>
+                        <p id="ws" class="cd"></p>
+                    </section>
+                    <section class="info" id="info2">
+                        <p id="t">Temperature:</p>
+                        <p id="w">High:</p>
+                        <p id="c">Low:</p>
+                        <p id="f">Feels Like:</p>
+                        <p id="v">Visibility</p>
+                        <p id="h">Humidity:</p>
+                    </section>
+                </section>
+            </section>
+            <section class="area" id="area2">
+                <section id="icon">
+                    <img src="" id="weathersvg">
+                </section>
+                <section id="weather"></section>
+                <!--<svg src="images/weathersvg/weather_sagittarius.svg"></svg>-->
+            </section>
+        </section>
+        <section class="container" id="bottomarea">
+            <div id="sunBar"></div>
+            <div id="sun"><img src="images/weathersvg/sunny.svg" alt="Sun" id="SBS"><p id="cT"></p></div>
+            <div id="riseTime"><p id="rT"></p></div>
+            <div id="setTime"><p id="sT"></p></div>
+        </section>
+
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
