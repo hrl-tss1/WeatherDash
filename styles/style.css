@@ -209,7 +209,7 @@ p {
 }
 
 #cT {
-    transform: translate(-2.75vw, -9.5vh) !important;
+    transform: translate(-2.6vw, -9.5vh) !important;
 }
 
 #arrow {
@@ -248,4 +248,11 @@ p {
 
 #wd {
 	transform: translate(175px, 110px);
+}
+
+#tD {
+	position: absolute;
+    white-space: nowrap;
+    transform: translate(0, 120px);
+    font-size: 36px;
 }
