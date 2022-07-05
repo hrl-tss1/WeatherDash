@@ -58,13 +58,13 @@ function fillData(data){
         document.getElementById("ws").innerHTML = "Speed: " + data.wind.speed + "mph";
     }
     
-    if(d.getMinutes() < 10) var cTT = "0" + d.getMinutes();
-    else var cTT = d.getMinutes();
+    if(d.getMinutes() < 10) var cTM = "0" + d.getMinutes();
+    else var cTM = d.getMinutes();
     if(d.getHours() < 13) var cTH = d.getHours();
     else var cTH = d.getHours()-12;
     if(d.getHours() < 12) var cTA = " AM";
     else var cTA = " PM";
-    document.getElementById("cT").innerHTML = cTH+":"+cTT+cTA;
+    document.getElementById("cT").innerHTML = cTH+":"+cTM+cTA;
    
 };
 
