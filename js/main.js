@@ -1,9 +1,10 @@
 var weatherImg = document.getElementById("weathersvg");
 var sW = screen.width;
 var d = new Date();
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const DOW = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 function fillData(data){
-    console.log(data);
     if(data){
         document.getElementById("t").innerHTML = "Temperature: " + Math.round(data.main.temp) + "&degF";
         document.getElementById("f").innerHTML = "Feels Like: " + Math.round(data.main.feels_like) + "&degF";
@@ -52,8 +53,9 @@ function fillData(data){
         else var sTT = sunsetTime.getMinutes();
         document.getElementById("rT").innerHTML = sunriseTime.getHours()+":"+rTT+" AM";
         document.getElementById("sT").innerHTML = sunsetTime.getHours()-12+":"+sTT+" PM";
-        document.getElementById("arrow").style.transform = "rotate(" + (-60 + data.wind.deg) + "deg)";
-        document.getElementById("arrow").style.width = (20 + data.wind.speed/30 * 130) + "px";
+        document.getElementById("arrow").style.transform = "rotate(" + data.wind.deg + "deg)";
+        document.getElementById("arrow").style.fontSize = (15 + data.wind.speed/30 * 100) + "px";
+        document.getElementById("arrow").style.color = "rgb(" + (255*data.wind.speed/30) + ", " + (255-255*data.wind.speed/30) + ", 0)";
         document.getElementById("wd").innerHTML = "Direction: " + data.wind.deg + "&deg";
         document.getElementById("ws").innerHTML = "Speed: " + data.wind.speed + "mph";
     }
@@ -65,6 +67,19 @@ function fillData(data){
     if(d.getHours() < 12) var cTA = " AM";
     else var cTA = " PM";
     document.getElementById("cT").innerHTML = cTH+":"+cTM+cTA;
+    if(((d.getDate()%10)==1) && (d.getDate()!=11)) {
+        var att = "st";
+    } 
+    else if(((d.getDate()%10)==2) && (d.getDate()!=12)) {
+        var att = "nd";
+    } 
+    else if(((d.getDate()%10)==3) && (d.getDate()!=13)) {
+        var att = "rd";
+    } 
+    else {
+        var att = "th";
+    }
+    document.getElementById("tD").innerHTML = DOW[d.getDay()] + ", " + months[d.getMonth()] + " " + d.getDate() + att;
    
 };
 
