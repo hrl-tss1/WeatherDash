@@ -6,11 +6,11 @@ const DOW = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "
 
 function fillData(data){
     if(data){
-        document.getElementById("t").innerHTML = "Temperature: " + Math.round(data.main.temp) + "&degF";
-        document.getElementById("f").innerHTML = "Feels Like: " + Math.round(data.main.feels_like) + "&degF";
+        document.getElementById("t").innerHTML = "Temperature: " + Math.round(data.main.temp) + "&degF " + Math.round((data.main.temp-32)*5/9) + "&degC";
+        document.getElementById("f").innerHTML = "Feels Like: " + Math.round(data.main.feels_like) + "&degF " + Math.round((data.main.feels_like-32)*5/9) + "&degC" ;
         document.getElementById("v").innerHTML = "Visibility: " + Math.round(data.visibility/1000) + "mi";
-        document.getElementById("w").innerHTML = "High: " + Math.round(data.main.temp_max) + "&degF";
-        document.getElementById("c").innerHTML = "Low: " + Math.round(data.main.temp_min) + "&degF";
+        document.getElementById("w").innerHTML = "High: " + Math.round(data.main.temp_max) + "&degF " + Math.round((data.main.temp_max-32)*5/9) + "&degC";
+        document.getElementById("c").innerHTML = "Low: " + Math.round(data.main.temp_min) + "&degF " + Math.round((data.main.temp_min-32)*5/9) + "&degC";
         document.getElementById("h").innerHTML = "Humidity: " + data.main.humidity + "%";
         document.getElementById("weather").innerHTML = data.weather[0].description;
         switch(data.weather[0].icon) {
